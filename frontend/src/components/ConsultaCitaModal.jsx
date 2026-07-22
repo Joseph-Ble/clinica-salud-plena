@@ -23,7 +23,7 @@ function ConsultaCitaModal({ onClose }) {
     try {
       // Consumir REST endpoint del backend para buscar citas por número de teléfono
       const cleanPhone = telefono.trim();
-      const res = await axios.get(`http://localhost:5000/api/citas/telefono/${encodeURIComponent(cleanPhone)}`);
+      const res = await axios.get(`https://clinica-backend-mkc1.onrender.com/api/citas/telefono/${encodeURIComponent(cleanPhone)}`);
       
       if (res.data.success && Array.isArray(res.data.data)) {
         setCitas(res.data.data);

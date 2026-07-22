@@ -28,7 +28,7 @@ function RegistrosModal({ onClose }) {
     setErrorLogin('');
     setCargandoLogin(true);
     try {
-      const res = await axios.post('http://localhost:5000/api/auth/login', { usuario, clave });
+      const res = await axios.post('https://clinica-backend-mkc1.onrender.com/api/auth/login', { usuario, clave });
       if (res.data.success) {
         setToken(res.data.token);
         sessionStorage.setItem('csp_admin_token', res.data.token);
@@ -50,8 +50,8 @@ function RegistrosModal({ onClose }) {
     try {
       // Consumir el endpoint backend con filtro de médico por query param
       const url = doctorNombre === 'todos' 
-        ? 'http://localhost:5000/api/citas'
-        : `http://localhost:5000/api/citas?doctor=${encodeURIComponent(doctorNombre)}`;
+        ? 'https://clinica-backend-mkc1.onrender.com/api/citas'
+        : `https://clinica-backend-mkc1.onrender.com/api/citas?doctor=${encodeURIComponent(doctorNombre)}`;
 
       const res = await axios.get(url, {
         headers: { Authorization: `Bearer ${tokenActivo}` }

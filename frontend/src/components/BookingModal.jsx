@@ -151,7 +151,7 @@ function BookingModal({ step, setStep, selectedDoctor, setSelectedDoctor, onClos
     };
 
     try {
-      const res = await axios.post('http://localhost:5000/api/citas', nuevaCita);
+      const res = await axios.post('https://clinica-backend-mkc1.onrender.com/api/citas', nuevaCita);
       if (res.data.success) {
         setStep(4);
       }
@@ -312,8 +312,8 @@ function BookingModal({ step, setStep, selectedDoctor, setSelectedDoctor, onClos
                 <input
                   type="text"
                   className="form-control py-2"
-                  style={{ 
-                    backgroundColor: '#F7F4EE', 
+                  style={{
+                    backgroundColor: '#F7F4EE',
                     borderRadius: '10px',
                     border: (touched.nombrePaciente && errNombre) ? '1.5px solid #dc3545' : '1.5px solid transparent'
                   }}
@@ -335,8 +335,8 @@ function BookingModal({ step, setStep, selectedDoctor, setSelectedDoctor, onClos
                 <input
                   type="email"
                   className="form-control py-2"
-                  style={{ 
-                    backgroundColor: '#F7F4EE', 
+                  style={{
+                    backgroundColor: '#F7F4EE',
                     borderRadius: '10px',
                     border: (touched.email && errEmail) ? '1.5px solid #dc3545' : '1.5px solid transparent'
                   }}
@@ -359,8 +359,8 @@ function BookingModal({ step, setStep, selectedDoctor, setSelectedDoctor, onClos
                   type="tel"
                   maxLength={9}
                   className="form-control py-2"
-                  style={{ 
-                    backgroundColor: '#F7F4EE', 
+                  style={{
+                    backgroundColor: '#F7F4EE',
                     borderRadius: '10px',
                     border: (touched.telefono && errTelefono) ? '1.5px solid #dc3545' : '1.5px solid transparent'
                   }}
@@ -383,8 +383,8 @@ function BookingModal({ step, setStep, selectedDoctor, setSelectedDoctor, onClos
                   className="form-control py-2"
                   rows="3"
                   maxLength={300}
-                  style={{ 
-                    backgroundColor: '#F7F4EE', 
+                  style={{
+                    backgroundColor: '#F7F4EE',
                     borderRadius: '10px',
                     border: (touched.motivo && errMotivo) ? '1.5px solid #dc3545' : '1.5px solid transparent'
                   }}
